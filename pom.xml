@@ -3,4 +3,13 @@
   <groupId>net.homelinux.md401</groupId>
   <artifactId>echelon</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+      <plugins>
+          <plugin>
+              <groupId>org.scala-tools</groupId>
+              <artifactId>maven-scala-plugin</artifactId>
+              <version>2.15.2</version>
+          </plugin>
+      </plugins>
+  </build>
 </project>
