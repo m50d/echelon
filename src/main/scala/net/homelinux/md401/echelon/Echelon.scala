@@ -23,7 +23,8 @@ trait IsReducedEchelonForm[MT]
 object IsReducedEchelonForm {
   implicit object EmptyIsReducedEchelonForm extends IsReducedEchelonForm[HNil]
 
-  implicit def AddRowReducedEchelonForm[TT <: HNil] = new IsReducedEchelonForm[TT] {}
+  //TODO: replace the int with a new row
+  implicit def AddRowReducedEchelonForm[TT <: HNil](implicit tiref: IsReducedEchelonForm[TT], ce: ColumnExtension[TT]) = new IsReducedEchelonForm[Int :: ce.Extended] {}
 }
 
 object Echelon {
