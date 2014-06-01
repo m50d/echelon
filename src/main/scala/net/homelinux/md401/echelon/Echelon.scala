@@ -25,6 +25,9 @@ object IsReducedEchelonForm {
 
   //TODO: replace the int with a new row
   implicit def AddRowReducedEchelonForm[TT <: HNil](implicit tiref: IsReducedEchelonForm[TT], ce: ColumnExtension[TT]) = new IsReducedEchelonForm[Int :: ce.Extended] {}
+  
+  //TODO: actually implement this
+  def subtractRow[MT <: HList, IT <: Nat](matrix: MT, factor: Int) = matrix
 }
 
 object Echelon {
