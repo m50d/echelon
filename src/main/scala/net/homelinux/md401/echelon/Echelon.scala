@@ -13,6 +13,7 @@ object ColumnExtension {
   }
   
   implicit def AddRowColumnExtension[RT <: HList, TT <: HList, ETT <: HList] = new ColumnExtension[RT :: TT] {
+    //TODO: replace Int with some kind of zero type
     type Extended = (Int :: RT) :: ETT
   }
 }
