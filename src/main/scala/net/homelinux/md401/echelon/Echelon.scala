@@ -4,7 +4,7 @@ import shapeless._
 import scala.None
 
 trait ColumnExtension[MT] {
-  type Extended <: HNil
+  type Extended <: HList
 }
 
 object ColumnExtension {
@@ -12,7 +12,7 @@ object ColumnExtension {
     type Extended = HNil
   }
   
-  implicit def AddRowColumnExtension[RT <: HNil, TT <: HNil, ETT <: HNil] = new ColumnExtension[RT :: TT] {
+  implicit def AddRowColumnExtension[RT <: HList, TT <: HList, ETT <: HList] = new ColumnExtension[RT :: TT] {
     type Extended = (Int :: RT) :: ETT
   }
 }
